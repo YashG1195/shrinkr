@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
@@ -60,6 +61,7 @@ function App() {
             <Route path="/register" element={<Register onLogin={handleLogin} />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </Router>
   );

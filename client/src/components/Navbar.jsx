@@ -1,35 +1,39 @@
 import { Link } from 'react-router-dom';
-import { FiLink, FiLogOut, FiUser } from 'react-icons/fi';
+import { FiLogOut } from 'react-icons/fi';
 
 const Navbar = ({ user, onLogout }) => {
   return (
-    <nav className="sticky top-0 z-50 bg-slate-950/70 backdrop-blur-md border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold flex items-center gap-2 tracking-tight">
-          <div className="bg-indigo-500 p-1.5 rounded-lg text-white">
-            <FiLink />
-          </div>
-          <span>Shrinkr</span>
-        </Link>
+    <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+      <div className="flex items-center justify-between px-margin-mobile h-16 w-full max-w-container-max mx-auto">
+        <div className="flex items-center gap-stack-md">
+          <span className="material-symbols-outlined text-primary active:scale-95 transition-transform cursor-pointer">menu</span>
+          <Link to="/" className="font-headline-md text-headline-md font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+            Shrinkr
+          </Link>
+        </div>
         
-        <div className="flex items-center gap-6">
-          <Link to="/" className="text-slate-400 hover:text-white transition-colors font-medium">Home</Link>
+        <div className="flex items-center gap-stack-md">
+          <Link to="/" className="text-on-surface-variant hover:text-primary transition-colors font-medium text-sm md:text-base hidden sm:block">Home</Link>
+          
           {user ? (
             <>
-              <Link to="/dashboard" className="text-slate-400 hover:text-white transition-colors font-medium">Dashboard</Link>
-              <button onClick={onLogout} className="btn btn-outline py-2 px-4 text-sm">
-                <FiLogOut /> Logout
+              <Link to="/dashboard" className="text-on-surface-variant hover:text-primary transition-colors font-medium text-sm md:text-base hidden sm:block">Dashboard</Link>
+              <button onClick={onLogout} className="text-on-surface-variant hover:text-error transition-colors flex items-center gap-1 cursor-pointer">
+                <FiLogOut /> <span className="hidden sm:inline">Logout</span>
               </button>
+              <div className="w-8 h-8 rounded-full overflow-hidden border border-outline-variant bg-surface-container flex items-center justify-center">
+                <span className="text-primary font-bold">{user.email ? user.email.charAt(0).toUpperCase() : 'U'}</span>
+              </div>
             </>
           ) : (
             <>
-              <Link to="/login" className="text-slate-400 hover:text-white transition-colors font-medium">Login</Link>
-              <Link to="/register" className="btn btn-primary py-2 px-5 text-sm shadow-indigo-500/20">Sign Up</Link>
+              <Link to="/login" className="text-on-surface-variant hover:text-primary transition-colors font-medium text-sm md:text-base hidden sm:block">Login</Link>
+              <Link to="/register" className="btn-primary py-1.5 px-4 rounded-lg text-sm font-semibold">Sign Up</Link>
             </>
           )}
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 
