@@ -1,124 +1,117 @@
 @import "tailwindcss";
 
 @theme {
-  --color-on-surface: #d4e4fa;
-  --color-on-secondary-fixed-variant: #3f465c;
-  --color-tertiary: #f6f7ff;
-  --color-primary-container: #00f5e1;
-  --color-on-tertiary-fixed: #111c2d;
-  --color-surface: #051424;
-  --color-on-primary-container: #006c62;
-  --color-secondary-container: #3f465c;
-  --color-on-secondary: #283044;
-  --color-on-tertiary-container: #556074;
-  --color-surface-tint: #00decc;
-  --color-error: #ffb4ab;
-  --color-on-secondary-fixed: #131b2e;
-  --color-surface-variant: #273647;
-  --color-on-secondary-container: #adb4ce;
-  --color-on-error-container: #ffdad6;
-  --color-on-surface-variant: #b9cac6;
-  --color-on-primary: #003732;
-  --color-tertiary-container: #d0dbf3;
-  --color-tertiary-fixed-dim: #bcc7de;
-  --color-on-tertiary: #263143;
-  --color-primary-fixed-dim: #00decc;
-  --color-outline: #839491;
-  --color-outline-variant: #3a4a47;
-  --color-surface-bright: #2c3a4c;
-  --color-primary-fixed: #24fde8;
-  --color-tertiary-fixed: #d8e3fb;
-  --color-surface-dim: #051424;
-  --color-secondary-fixed-dim: #bec6e0;
-  --color-secondary-fixed: #dae2fd;
-  --color-surface-container-high: #1c2b3c;
-  --color-surface-container-low: #0d1c2d;
-  --color-error-container: #93000a;
-  --color-background: #051424;
-  --color-on-primary-fixed: #00201d;
-  --color-inverse-surface: #d4e4fa;
-  --color-secondary: #bec6e0;
-  --color-inverse-on-surface: #233143;
-  --color-primary: #dbfff8;
-  --color-on-tertiary-fixed-variant: #3c475a;
-  --color-inverse-primary: #006a61;
-  --color-surface-container-highest: #273647;
-  --color-surface-container: #122131;
-  --color-on-primary-fixed-variant: #005049;
-  --color-on-error: #690005;
-  --color-surface-container-lowest: #010f1f;
-  --color-on-background: #d4e4fa;
+  --color-secondary-fixed: #ffd9e5;
+  --color-primary: #2f2ebe;
+  --color-secondary-fixed-dim: #ffb0cd;
+  --color-tertiary-container: #8330cc;
+  --color-inverse-on-surface: #eef0ff;
+  --color-secondary: #b4136d;
+  --color-primary-fixed: #e1e0ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-tint: #494bd6;
+  --color-on-secondary-fixed: #3e0022;
+  --color-surface-container-high: #e2e7ff;
+  --color-surface-container-low: #f2f3ff;
+  --color-tertiary-fixed-dim: #ddb7ff;
+  --color-on-secondary-container: #600037;
+  --color-surface-dim: #d2d9f4;
+  --color-on-secondary-fixed-variant: #8c0053;
+  --color-on-primary-fixed: #06006c;
+  --color-on-surface-variant: #464554;
+  --color-surface-bright: #faf8ff;
+  --color-on-primary-fixed-variant: #2f2ebe;
+  --color-on-error: #ffffff;
+  --color-on-tertiary-fixed: #2c0050;
+  --color-on-tertiary-fixed-variant: #6900b3;
+  --color-inverse-surface: #283044;
+  --color-surface-container: #eaedff;
+  --color-primary-fixed-dim: #c0c1ff;
+  --color-error-container: #ffdad6;
+  --color-inverse-primary: #c0c1ff;
+  --color-on-primary-container: #d6d5ff;
+  --color-outline-variant: #c7c5d7;
+  --color-tertiary: #6900b3;
+  --color-on-tertiary-container: #eacfff;
+  --color-on-secondary: #ffffff;
+  --color-surface-container-highest: #dae2fd;
+  --color-on-surface: #131b2e;
+  --color-tertiary-fixed: #f0dbff;
+  --color-success-light: #f0fdf4;
+  --color-primary-container: #494bd6;
+  --color-on-background: #131b2e;
+  --color-on-primary: #ffffff;
+  --color-on-tertiary: #ffffff;
+  --color-error: #ba1a1a;
+  --color-background: #F8FAFC;
+  --color-outline: #777680;
+  --color-surface: #FFFFFF;
+  --color-secondary-container: #fd56a7;
+  --color-surface-variant: #dae2fd;
+  --color-on-error-container: #93000a;
+  --color-brand-teal: #00F5E1;
 
-  --radius-DEFAULT: 8px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
   --radius-full: 9999px;
 
-  --spacing-stack-sm: 8px;
   --spacing-stack-md: 16px;
-  --spacing-gutter: 24px;
-  --spacing-margin-mobile: 16px;
   --spacing-container-max: 1200px;
+  --spacing-margin-mobile: 16px;
+  --spacing-stack-sm: 8px;
+  --spacing-gutter: 24px;
   --spacing-stack-lg: 32px;
   --spacing-section-padding: 80px;
 
-  --font-headline-lg-mobile: 'Plus Jakarta Sans';
-  --font-label-sm: 'Geist';
-  --font-label-md: 'Geist';
-  --font-body-lg: 'Inter';
-  --font-body-md: 'Inter';
-  --font-headline-md: 'Plus Jakarta Sans';
-  --font-display-lg: 'Plus Jakarta Sans';
-  --font-headline-lg: 'Plus Jakarta Sans';
+  --font-body-lg: 'Inter', sans-serif;
+  --font-label-sm: 'Geist', sans-serif;
+  --font-body-md: 'Inter', sans-serif;
+  --font-display-lg: 'Plus Jakarta Sans', sans-serif;
+  --font-headline-md: 'Plus Jakarta Sans', sans-serif;
+  --font-headline-lg-mobile: 'Plus Jakarta Sans', sans-serif;
+  --font-headline-lg: 'Plus Jakarta Sans', sans-serif;
+  --font-label-md: 'Geist', sans-serif;
 
-  --font-size-headline-lg-mobile: 32px;
-  --font-size-label-sm: 12px;
-  --font-size-label-md: 14px;
   --font-size-body-lg: 18px;
+  --font-size-label-sm: 12px;
   --font-size-body-md: 16px;
-  --font-size-headline-md: 30px;
   --font-size-display-lg: 72px;
+  --font-size-headline-md: 30px;
+  --font-size-headline-lg-mobile: 32px;
   --font-size-headline-lg: 48px;
+  --font-size-label-md: 14px;
 }
 
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
-.premium-blur {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.gradient-text {
-  background-clip: text;
+.teal-gradient-text {
+  background: linear-gradient(90deg, #00F5E1 0%, #494bd6 100%);
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
-  background-image: linear-gradient(to right, #00f5e1, #bcffee);
 }
 
-.primary-gradient {
-  background: linear-gradient(135deg, #00decc 0%, #006c62 100%);
+.hero-shadow {
+  box-shadow: 0 10px 30px -10px rgba(0, 245, 225, 0.15);
 }
 
-.inner-glow {
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.03);
-}
-
-.card-hover:hover {
-  box-shadow: 0 0 30px rgba(0, 245, 225, 0.1);
-  border-color: rgba(0, 245, 225, 0.2);
+.glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 231, 255, 0.6);
 }
 
 body {
   background-color: #F8FAFC;
-  color: #1E293B;
+  color: #131b2e;
   overflow-x: hidden;
-  background-image: radial-gradient(circle at 50% -20%, #FFFFFF 0%, #F8FAFC 100%);
   min-height: max(884px, 100dvh);
 }
 
-/* Smooth reveal animations */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -128,28 +121,28 @@ body {
 }
 
 @layer components {
-  /* Reuse our old utility classes but skin them for the dashboard / auth pages using new colors */
+  /* Common UI overrides if needed, mainly reusing tailwind inline classes */
   .glass-card {
-    @apply bg-white border border-slate-200 inner-glow rounded-xl p-stack-md shadow-sm;
+    @apply bg-surface border border-outline-variant/40 rounded-xl p-8 shadow-sm;
   }
   
   .btn {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold transition-transform active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-transform active:scale-[0.98];
   }
   
   .btn-primary {
-    @apply primary-gradient text-on-primary shadow-lg shadow-primary-container/10 hover:shadow-primary-container/20;
+    @apply bg-primary text-on-primary shadow-sm hover:-translate-y-0.5;
   }
   
   .btn-outline {
-    @apply bg-transparent text-slate-700 border border-slate-300 hover:bg-slate-50;
+    @apply bg-transparent text-on-surface border border-outline-variant hover:bg-surface-container-high;
   }
   
   .form-input {
-    @apply w-full bg-slate-50 border border-slate-200 rounded-lg py-4 px-4 font-body-md text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-container/20 focus:border-primary-container/50 transition-all;
+    @apply w-full bg-slate-50 rounded-lg py-4 px-4 font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-brand-teal/50 transition-all;
   }
   
   .form-label {
-    @apply block mb-2 text-sm font-medium text-slate-600;
+    @apply block mb-2 text-sm font-medium text-on-surface-variant;
   }
 }

@@ -1,39 +1,64 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FiLogOut } from 'react-icons/fi';
 
 const Navbar = ({ user, onLogout }) => {
+  const location = useLocation();
+
   return (
-    <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-      <div className="flex items-center justify-between px-margin-mobile h-16 w-full max-w-container-max mx-auto">
-        <div className="flex items-center gap-stack-md">
-          <span className="material-symbols-outlined text-primary-container active:scale-95 transition-transform cursor-pointer">menu</span>
-          <Link to="/" className="font-headline-md text-headline-md font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-secondary-container">
-            Shrinkr
-          </Link>
-        </div>
-        
-        <div className="flex items-center gap-stack-md">
-          <Link to="/" className="text-on-surface-variant hover:text-primary-container transition-colors font-medium text-sm md:text-base hidden sm:block">Home</Link>
+    <>
+      <header className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-surface-container-high/60 shadow-sm transition-all duration-300 ease-in-out">
+        <div className="flex justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto h-16">
+          <div className="flex items-center gap-2">
+            <span className="material-symbols-outlined text-brand-teal" style={{ fontVariationSettings: "'FILL' 1" }}>link</span>
+            <Link to="/" className="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
+              Shrinkr
+            </Link>
+          </div>
           
-          {user ? (
-            <>
-              <Link to="/dashboard" className="text-on-surface-variant hover:text-primary-container transition-colors font-medium text-sm md:text-base hidden sm:block">Dashboard</Link>
-              <button onClick={onLogout} className="text-on-surface-variant hover:text-error transition-colors flex items-center gap-1 cursor-pointer">
-                <FiLogOut /> <span className="hidden sm:inline">Logout</span>
-              </button>
-              <div className="w-8 h-8 rounded-full overflow-hidden border border-outline-variant bg-surface-container flex items-center justify-center">
-                <span className="text-primary-container font-bold">{user.email ? user.email.charAt(0).toUpperCase() : 'U'}</span>
-              </div>
-            </>
-          ) : (
-            <>
-              <Link to="/login" className="text-on-surface-variant hover:text-primary-container transition-colors font-medium text-sm md:text-base hidden sm:block">Login</Link>
-              <Link to="/register" className="btn-primary py-1.5 px-4 rounded-lg text-sm font-semibold">Sign Up</Link>
-            </>
-          )}
+          <nav className="hidden md:flex items-center gap-6">
+            <Link to="/" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/' ? 'text-primary dark:text-primary-fixed font-bold' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Home</Link>
+            {user && <Link to="/dashboard" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/dashboard' ? 'text-primary dark:text-primary-fixed font-bold' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Dashboard</Link>}
+          </nav>
+          
+          <div className="hidden md:flex items-center gap-4">
+            {user ? (
+              <>
+                <div className="w-8 h-8 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center">
+                  <span className="text-primary font-bold">{user.email ? user.email.charAt(0).toUpperCase() : 'U'}</span>
+                </div>
+                <button onClick={onLogout} className="font-label-md text-label-md text-on-surface font-medium hover:text-primary transition-colors flex items-center gap-1">
+                  <FiLogOut /> Log out
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/login" className="font-label-md text-label-md text-on-surface font-medium hover:text-primary transition-colors">Log in</Link>
+                <Link to="/register" className="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded-lg shadow-sm hover:-translate-y-0.5 active:scale-95 transition-all">Sign up</Link>
+              </>
+            )}
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Bottom Navigation Bar (Mobile Only) */}
+      <nav className="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-surface/90 dark:bg-inverse-surface/90 backdrop-blur-lg border-t border-surface-container-high/60 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50">
+        <Link to="/" className={`flex flex-col items-center justify-center px-3 py-1 rounded-xl transition-all active:scale-95 duration-150 ${location.pathname === '/' ? 'bg-primary-container text-on-primary-container' : 'text-on-surface-variant hover:bg-surface-container-high/50'}`}>
+          <span className="material-symbols-outlined mb-1" style={{ fontVariationSettings: "'FILL' 1" }}>home</span>
+          <span className="font-label-sm text-label-sm">Home</span>
+        </Link>
+        {user ? (
+          <Link to="/dashboard" className={`flex flex-col items-center justify-center px-3 py-1 rounded-xl transition-all active:scale-95 duration-150 ${location.pathname === '/dashboard' ? 'bg-primary-container text-on-primary-container' : 'text-on-surface-variant hover:bg-surface-container-high/50'}`}>
+            <span className="material-symbols-outlined mb-1">dashboard</span>
+            <span className="font-label-sm text-label-sm">Dashboard</span>
+          </Link>
+        ) : (
+          <Link to="/login" className={`flex flex-col items-center justify-center px-3 py-1 rounded-xl transition-all active:scale-95 duration-150 ${location.pathname === '/login' ? 'bg-primary-container text-on-primary-container' : 'text-on-surface-variant hover:bg-surface-container-high/50'}`}>
+            <span className="material-symbols-outlined mb-1">login</span>
+            <span className="font-label-sm text-label-sm">Log in</span>
+          </Link>
+        )}
+      </nav>
+    </>
   );
 };
 
