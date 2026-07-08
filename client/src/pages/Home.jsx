@@ -36,14 +36,14 @@ const Home = () => {
 
   return (
     <div className="relative pt-12 pb-section-padding flex flex-col items-center">
-      {/* Hero Background Animation */}
-      <div className="absolute inset-0 -z-10 pointer-events-none opacity-40"></div>
+      {/* Hero Background Animation Element */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary-container/5 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
       
       {/* Hero Section */}
       <section className="px-margin-mobile flex flex-col items-center text-center space-y-stack-lg animate-fade-up w-full">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant text-primary-fixed-dim mb-stack-sm">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high/50 border border-white/10 text-primary-container mb-stack-sm backdrop-blur-sm shadow-sm">
           <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>auto_awesome</span>
-          <span className="font-label-sm text-label-sm">NEW: SMART LINKS RELEASED</span>
+          <span className="font-label-sm text-label-sm uppercase tracking-wider">NEW: SMART LINKS RELEASED</span>
         </div>
         
         <h1 className="font-headline-lg-mobile text-headline-lg-mobile md:text-[72px] md:leading-[80px] text-on-surface">
@@ -58,14 +58,14 @@ const Home = () => {
 
       {/* Input Section */}
       <section className="mt-stack-lg px-margin-mobile animate-fade-up w-full max-w-[800px]" style={{ animationDelay: '0.2s' }}>
-        <div className="p-stack-md rounded-xl border border-white/5 inner-glow relative overflow-hidden bg-surface-container">
+        <div className="p-stack-md rounded-xl border border-white/10 inner-glow relative overflow-hidden shadow-2xl bg-surface-container">
           <form onSubmit={handleSubmit} className="flex flex-col gap-stack-md relative z-10">
             <div className="relative group">
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary-container transition-colors">
                 <span className="material-symbols-outlined">link</span>
               </div>
               <input 
-                className="w-full bg-surface-container-lowest border border-outline-variant rounded-lg py-4 pl-12 pr-4 font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" 
+                className="w-full bg-surface-container-lowest border border-outline-variant rounded-lg py-4 pl-12 pr-4 font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container/20 focus:border-primary-container/50 transition-all" 
                 placeholder="Paste your long URL here..." 
                 type="url"
                 value={url}
@@ -75,12 +75,12 @@ const Home = () => {
             </div>
             <button 
               type="submit" 
-              className="primary-gradient w-full py-4 px-stack-lg rounded-lg font-headline-md text-body-lg text-white flex items-center justify-center gap-stack-sm active:scale-[0.98] transition-transform shadow-lg shadow-primary-container/20 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="primary-gradient w-full py-4 px-stack-lg rounded-lg font-headline-md text-body-lg text-on-primary flex items-center justify-center gap-stack-sm active:scale-[0.98] transition-transform shadow-lg shadow-primary-container/10 disabled:opacity-70 disabled:cursor-not-allowed"
               disabled={loading}
             >
               {loading ? (
                 <span className="flex items-center gap-2">
-                  <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                  <svg className="animate-spin h-5 w-5 text-on-primary" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
@@ -88,7 +88,7 @@ const Home = () => {
                 </span>
               ) : (
                 <>
-                  <span>Shorten</span>
+                  <span className="font-bold">Shorten</span>
                   <span className="material-symbols-outlined">arrow_forward</span>
                 </>
               )}
@@ -98,12 +98,12 @@ const Home = () => {
           {error && <p className="text-error mt-4 text-center font-medium bg-error/10 py-2 rounded-lg relative z-10">{error}</p>}
           
           {shortUrl && (
-            <div className="mt-6 bg-surface-container-high border border-outline-variant p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4 animate-fade-up relative z-10">
-              <a href={shortUrl} target="_blank" rel="noopener noreferrer" className="text-tertiary text-lg font-semibold hover:text-tertiary-fixed-dim transition-colors break-all">
+            <div className="mt-6 bg-surface-container-high/50 backdrop-blur-sm border border-outline-variant p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4 animate-fade-up relative z-10">
+              <a href={shortUrl} target="_blank" rel="noopener noreferrer" className="text-primary-container text-lg font-semibold hover:text-primary-fixed-dim transition-colors break-all">
                 {shortUrl}
               </a>
               <button 
-                className={`btn py-2 px-4 whitespace-nowrap ${copied ? 'bg-tertiary text-on-tertiary' : 'btn-outline'}`}
+                className={`btn py-2 px-4 whitespace-nowrap ${copied ? 'bg-primary-container text-on-primary' : 'btn-outline'}`}
                 onClick={handleCopy}
               >
                 {copied ? <><FiCheckCircle /> Copied!</> : <><FiCopy /> Copy</>}
@@ -112,21 +112,21 @@ const Home = () => {
           )}
 
           {/* Subtle decorative element */}
-          <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/10 blur-3xl rounded-full"></div>
+          <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-primary-container/10 blur-3xl rounded-full"></div>
         </div>
       </section>
 
       {/* Featured / Bento Grid Visual */}
       <section className="mt-section-padding px-margin-mobile grid grid-cols-1 md:grid-cols-2 gap-stack-md animate-fade-up w-full max-w-[1000px]" style={{ animationDelay: '0.4s' }}>
-        <div className="py-stack-lg px-stack-md rounded-xl border border-white/5 inner-glow flex flex-col items-center text-center space-y-stack-sm card-hover transition-shadow bg-surface-container-high">
-          <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-2">
+        <div className="backdrop-blur-sm py-stack-lg px-stack-md rounded-xl border border-white/5 inner-glow flex flex-col items-center text-center space-y-stack-sm card-hover transition-all duration-300 bg-surface-container-high/50">
+          <div className="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container mb-2">
             <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>insights</span>
           </div>
           <h3 className="font-headline-md text-[20px] text-on-surface">Real-time Analytics</h3>
           <p className="font-body-md text-label-md text-on-surface-variant">Track clicks, locations, and referral sources instantly.</p>
         </div>
-        <div className="py-stack-lg px-stack-md rounded-xl border border-white/5 inner-glow flex flex-col items-center text-center space-y-stack-sm card-hover transition-shadow bg-surface-container-high">
-          <div className="w-12 h-12 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary mb-2">
+        <div className="backdrop-blur-sm py-stack-lg px-stack-md rounded-xl border border-white/5 inner-glow flex flex-col items-center text-center space-y-stack-sm card-hover transition-all duration-300 bg-surface-container-high/50">
+          <div className="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container mb-2">
             <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>qr_code_2</span>
           </div>
           <h3 className="font-headline-md text-[20px] text-on-surface">Custom QR Codes</h3>
@@ -135,17 +135,17 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="mt-section-padding px-margin-mobile flex justify-around items-center border-y border-outline-variant/30 py-stack-lg w-full max-w-[1000px]">
+      <section className="mt-section-padding px-margin-mobile flex justify-around items-center border-y border-white/5 py-stack-lg bg-surface-container-low w-full max-w-[1000px]">
         <div className="text-center">
           <div className="font-headline-lg-mobile text-[24px] text-on-surface">1.2M+</div>
           <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Links</div>
         </div>
-        <div className="w-px h-8 bg-outline-variant/50"></div>
+        <div className="w-px h-8 bg-outline-variant/30"></div>
         <div className="text-center">
           <div className="font-headline-lg-mobile text-[24px] text-on-surface">99.9%</div>
           <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Uptime</div>
         </div>
-        <div className="w-px h-8 bg-outline-variant/50"></div>
+        <div className="w-px h-8 bg-outline-variant/30"></div>
         <div className="text-center">
           <div className="font-headline-lg-mobile text-[24px] text-on-surface">50k+</div>
           <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Users</div>
