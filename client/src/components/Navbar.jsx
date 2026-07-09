@@ -6,7 +6,7 @@ const Navbar = ({ user, onLogout }) => {
 
   return (
     <>
-      <header className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-surface-container-high/60 shadow-sm transition-all duration-300 ease-in-out">
+      <header className="fixed top-0 w-full z-50 bg-white border-b border-surface-container-high/60 shadow-sm transition-all duration-300 ease-in-out">
         <div className="flex justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto h-16">
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-brand-teal" style={{ fontVariationSettings: "'FILL' 1" }}>link</span>
