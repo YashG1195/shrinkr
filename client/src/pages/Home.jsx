@@ -119,7 +119,7 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-stack-md md:gap-gutter">
           {/* Feature 1 */}
           <div className="bg-surface rounded-xl p-8 border border-outline-variant/40 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-lg bg-brand-teal/10 flex items-center justify-center mb-6">
+            <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style={{ background: 'linear-gradient(135deg, rgba(0, 245, 225, 0.15) 0%, rgba(73, 75, 214, 0.15) 100%)' }}>
               <span className="material-symbols-outlined text-brand-teal" style={{ fontVariationSettings: "'FILL' 1" }}>monitoring</span>
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface mb-stack-sm">Real-time Analytics</h3>
@@ -129,7 +129,7 @@ const Home = () => {
           </div>
           {/* Feature 2 */}
           <div className="bg-surface rounded-xl p-8 border border-outline-variant/40 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-lg bg-brand-teal/10 flex items-center justify-center mb-6">
+            <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6" style={{ background: 'linear-gradient(135deg, rgba(0, 245, 225, 0.15) 0%, rgba(73, 75, 214, 0.15) 100%)' }}>
               <span className="material-symbols-outlined text-brand-teal" style={{ fontVariationSettings: "'FILL' 1" }}>qr_code_2</span>
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface mb-stack-sm">Custom QR Codes</h3>
