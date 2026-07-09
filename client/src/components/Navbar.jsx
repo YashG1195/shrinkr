@@ -19,7 +19,7 @@ const Navbar = ({ user, onLogout }) => {
             <Link to="/" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Home</Link>
             <Link to="/links" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/links' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Links</Link>
             <Link to="/qr-codes" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/qr-codes' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>QR Codes</Link>
-            {user && <Link to="/analytics" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/analytics' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Analytics</Link>}
+            <Link to="/analytics" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/analytics' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Analytics</Link>
           </nav>
           
           <button className="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200 md:hidden">
@@ -60,17 +60,10 @@ const Navbar = ({ user, onLogout }) => {
           <span className="material-symbols-outlined mb-1">qr_code_2</span>
           <span className="font-label-sm text-label-sm">QR Codes</span>
         </Link>
-        {user ? (
           <Link to="/analytics" className={`flex flex-col items-center justify-center px-3 py-1 rounded-xl transition-all active:scale-95 duration-150 ${location.pathname === '/analytics' ? 'bg-primary-container text-on-primary-container' : 'text-on-surface-variant hover:bg-surface-container-high/50'}`}>
             <span className="material-symbols-outlined mb-1">bar_chart</span>
             <span className="font-label-sm text-label-sm">Analytics</span>
           </Link>
-        ) : (
-          <Link to="/login" className={`flex flex-col items-center justify-center px-3 py-1 rounded-xl transition-all active:scale-95 duration-150 ${location.pathname === '/login' ? 'bg-primary-container text-on-primary-container' : 'text-on-surface-variant hover:bg-surface-container-high/50'}`}>
-            <span className="material-symbols-outlined mb-1">login</span>
-            <span className="font-label-sm text-label-sm">Log in</span>
-          </Link>
-        )}
       </nav>
     </>
   );

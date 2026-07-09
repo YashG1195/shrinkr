@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const Analytics = () => {
+const Analytics = ({ user }) => {
   const [urls, setUrls] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -32,6 +32,22 @@ const Analytics = () => {
   };
 
   const totalClicks = urls.reduce((sum, url) => sum + (url.clicks || 0), 0);
+
+  if (!user) return (
+    <main className="flex-grow flex items-center justify-center pt-24 pb-28 md:pb-10 px-margin-mobile min-h-[70vh]">
+      <div className="bg-surface border border-outline-variant/40 rounded-2xl p-12 flex flex-col items-center text-center shadow-sm max-w-md w-full">
+        <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'linear-gradient(135deg, rgba(0, 245, 225, 0.15) 0%, rgba(73, 75, 214, 0.15) 100%)' }}>
+          <span className="material-symbols-outlined text-brand-teal" style={{ fontVariationSettings: "'FILL' 1" }}>lock</span>
+        </div>
+        <h2 className="font-headline-md text-headline-md text-on-surface font-bold mb-2">Sign in to view Analytics</h2>
+        <p className="font-body-md text-body-md text-on-surface-variant mb-6">Track clicks, performance, and insights for all your links.</p>
+        <div className="flex gap-3">
+          <Link to="/login" className="font-label-md text-label-md text-on-surface font-medium hover:text-primary transition-colors px-4 py-2 border border-outline-variant/60 rounded-lg">Log in</Link>
+          <Link to="/register" className="bg-primary text-on-primary font-label-md text-label-md px-5 py-2 rounded-lg shadow-sm hover:-translate-y-0.5 active:scale-95 transition-all">Sign up</Link>
+        </div>
+      </div>
+    </main>
+  );
 
   if (loading) return (
     <div className="flex justify-center items-center min-h-[60vh]">

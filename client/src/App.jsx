@@ -59,7 +59,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/links" element={<Links user={user} />} />
           <Route path="/qr-codes" element={<QRCode />} />
-          <Route path="/analytics" element={user ? <Analytics /> : <Login onLogin={handleLogin} />} />
+          <Route path="/analytics" element={<Analytics user={user} />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
           <Route path="/register" element={<Register onLogin={handleLogin} />} />
           {/* Keep /dashboard for backward compat */}
