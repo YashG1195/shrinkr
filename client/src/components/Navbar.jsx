@@ -18,7 +18,18 @@ const Navbar = ({ user, onLogout }) => {
           <nav className="hidden md:flex items-center gap-6">
             <Link to="/" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Home</Link>
             {user && <Link to="/dashboard" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/dashboard' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Dashboard</Link>}
+            {!user && (
+              <>
+                <Link to="/" className="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200">Links</Link>
+                <Link to="/" className="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200">QR Codes</Link>
+                <Link to="/" className="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200">Analytics</Link>
+              </>
+            )}
           </nav>
+          
+          <button className="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200 md:hidden">
+            <span className="material-symbols-outlined">menu</span>
+          </button>
           
           <div className="hidden md:flex items-center gap-4">
             {user ? (

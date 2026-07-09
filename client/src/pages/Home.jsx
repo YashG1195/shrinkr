@@ -38,9 +38,9 @@ const Home = () => {
     <div className="flex-grow pt-24 pb-safe flex flex-col items-center justify-center">
       {/* Hero Section */}
       <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-padding text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-primary mb-stack-sm shadow-sm">
-          <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>auto_awesome</span>
-          <span className="font-label-sm text-label-sm">NEW: SMART LINKS RELEASED</span>
+        <div className="inline-flex items-center gap-2 bg-primary/5 border border-primary/10 rounded-full px-4 py-1 mb-6">
+          <span className="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>
+          <span className="font-label-sm text-label-sm text-primary">NEW: SMART LINKS RELEASED</span>
         </div>
         
         <h1 className="font-display-lg text-[48px] md:text-display-lg font-extrabold text-on-background mb-stack-md leading-tight tracking-tight">
