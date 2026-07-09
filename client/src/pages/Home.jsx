@@ -69,7 +69,8 @@ const Home = () => {
             <button 
               type="submit"
               disabled={loading}
-              className="w-full sm:w-auto bg-brand-teal hover:bg-[#00e0cd] text-on-primary font-label-md text-label-md px-8 py-4 rounded-lg shadow-[0_4px_14px_0_rgba(0,245,225,0.39)] hover:shadow-[0_6px_20px_rgba(0,245,225,0.23)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 whitespace-nowrap font-semibold tracking-wide disabled:opacity-70"
+              className="w-full sm:w-auto hover:bg-[#00e0cd] text-on-primary font-label-md text-label-md px-8 py-4 rounded-lg shadow-[0_4px_14px_0_rgba(0,245,225,0.39)] hover:shadow-[0_6px_20px_rgba(0,245,225,0.23)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 whitespace-nowrap font-semibold tracking-wide disabled:opacity-70"
+              style={{ background: 'linear-gradient(90deg, #00F5E1 0%, #494bd6 100%)' }}
             >
               {loading ? 'Shortening...' : 'Shorten'}
             </button>

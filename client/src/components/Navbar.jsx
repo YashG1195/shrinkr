@@ -16,8 +16,8 @@ const Navbar = ({ user, onLogout }) => {
           </div>
           
           <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/' ? 'text-primary dark:text-primary-fixed font-bold' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Home</Link>
-            {user && <Link to="/dashboard" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/dashboard' ? 'text-primary dark:text-primary-fixed font-bold' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Dashboard</Link>}
+            <Link to="/" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Home</Link>
+            {user && <Link to="/dashboard" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/dashboard' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Dashboard</Link>}
           </nav>
           
           <div className="hidden md:flex items-center gap-4">
