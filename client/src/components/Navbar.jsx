@@ -16,10 +16,10 @@ const Navbar = ({ user, onLogout }) => {
           </div>
           
           <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Home</Link>
-            <Link to="/links" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/links' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Links</Link>
-            <Link to="/qr-codes" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/qr-codes' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>QR Codes</Link>
-            <Link to="/analytics" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/analytics' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary'}`}>Analytics</Link>
+            <Link to="/" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface hover:text-primary'}`}>Home</Link>
+            <Link to="/links" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/links' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface hover:text-primary'}`}>Links</Link>
+            <Link to="/qr-codes" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/qr-codes' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface hover:text-primary'}`}>QR Codes</Link>
+            <Link to="/analytics" className={`font-label-md text-label-md transition-colors duration-200 ${location.pathname === '/analytics' ? 'text-primary dark:text-primary-fixed font-bold border-b-2 border-brand-teal pb-1' : 'text-on-surface hover:text-primary'}`}>Analytics</Link>
           </nav>
           
           <button className="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200 md:hidden">
