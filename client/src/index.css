@@ -105,6 +105,11 @@
   border: 1px solid rgba(226, 231, 255, 0.6);
 }
 
+.input-focus-ring:focus-within {
+  box-shadow: 0 0 0 2px rgba(47, 46, 190, 0.2);
+  border-color: #2f2ebe;
+}
+
 body {
   background-color: #F8FAFC;
   color: #131b2e;
