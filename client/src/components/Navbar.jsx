@@ -10,7 +10,7 @@ const Navbar = ({ user, onLogout }) => {
         <div className="flex justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto h-16">
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-brand-teal" style={{ fontVariationSettings: "'FILL' 1" }}>link</span>
-            <Link to="/" className="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
+            <Link to="/" className="font-headline-md text-headline-md font-bold teal-gradient-text">
               Shrinkr
             </Link>
           </div>
