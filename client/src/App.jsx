@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import Dashboard from './pages/Dashboard';
+import Analytics from './pages/Analytics';
+import Links from './pages/Links';
+import QRCode from './pages/QRCode';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import axios from 'axios';
@@ -45,7 +47,7 @@ function App() {
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
     </div>
   );
 
@@ -53,14 +55,16 @@ function App() {
     <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar user={user} onLogout={handleLogout} />
-        <main className="flex-1 w-full max-w-7xl mx-auto p-6 md:p-8 animate-in fade-in duration-500">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={user ? <Dashboard /> : <Login onLogin={handleLogin} />} />
-            <Route path="/login" element={<Login onLogin={handleLogin} />} />
-            <Route path="/register" element={<Register onLogin={handleLogin} />} />
-          </Routes>
-        </main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/links" element={<Links user={user} />} />
+          <Route path="/qr-codes" element={<QRCode />} />
+          <Route path="/analytics" element={user ? <Analytics /> : <Login onLogin={handleLogin} />} />
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+          <Route path="/register" element={<Register onLogin={handleLogin} />} />
+          {/* Keep /dashboard for backward compat */}
+          <Route path="/dashboard" element={user ? <Analytics /> : <Login onLogin={handleLogin} />} />
+        </Routes>
         <Footer />
       </div>
     </Router>
